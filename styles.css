@@ -1,20 +1,9 @@
-/*변수를 추가할 때는 root 에 추가한다. root 은 HTML 문서 자체보다 더 높은 element이다.*/
+/* custom media and media query. */
+@custom-media --ipad-size (450px <= width <= 850px);
 
-:root {
-  --awesomeColor: #ff6b81; /*변수 이름과 값 지정*/
-  --coolColor: 1px solid red; /*border*/
+@media (--ipad-size) {
+  body {
+    background-color: red;
+  }
 }
-
-li:first-child a {
-  color: var(--awesomeColor); /*var() 로 호출*/
-}
-li:last-child a {
-  border: var(--coolColor);
-}
-
-/*custom selector :--변수이름 해당엘레먼트들*/
-@custom-selector :--headers h1, h2, h3, h4, h5, h6;
-
-:--headers {
-  color: #ffeaa7;
-}
+/*아이패트 사이즈에서 해당 스타일이 적용됨.*/
