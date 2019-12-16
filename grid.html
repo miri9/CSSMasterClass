@@ -9,16 +9,14 @@
         display: grid;
         grid-auto-rows: 100px;
         grid-template-columns: repeat(5, 100px);
-        grid-gap: 5px;
+        grid-gap: 10px;
 
-        /*justify-content: end;*/
+        /*justify-items: center;
+        align-items: center;*/
+        /*box 의 start / 중앙 / end 에  item (텍스트 등) 위치시킴*/
+        /*justify , align 을 하지 않았을 때 , 디폴트로 설정안된 부분에 대한 item 영역이 확장된다.*/
 
-        /*align-content: end;*/
-        /*모든 박스가 포함되어 있는 grid container 전체를 이동시킨다. = flex 와의 차이점 */
-
-        place-content: center end;
-        /*justify + align 동시에 적용이 가능하다.*/
-        /* arg 값 : align-content / justify-content */
+        place-items: center;
         height: 100vh;
       }
       .box:nth-child(odd) {
@@ -31,11 +29,11 @@
   </head>
   <body>
     <div class="father">
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
     </div>
   </body>
 </html>
