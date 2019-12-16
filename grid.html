@@ -8,17 +8,18 @@
       .father {
         display: grid;
         grid-auto-rows: 100px;
-
-        /*grid-template-columns: repeat(auto-fit, 1fr);
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));*/
-        /* auto-fit : (들어올 요소의 개수를 모를 때) 들어오는 요소마다 받아서, 쭉 펼쳐주어 브라우저를 꽉 채워준다."*/
-        /*창 크기를 줄일경우 col 의 정렬방식은 달라지지만, 요소의 크기가 그렇게 flexible 하진 않다.
-        >> 반응형 만들 경우  minmax 혼용 O. 그렇게 되면 요소의 크기가 자연스럽게 변경된다.*/
-
-        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-        /*auto-fill : 요소가 모자라 없는 부분에도 ghost-grid 가 있는게 특징. 즉, 기존 레이아웃 공간에 미리 요소의 "고정된 사이즈" 에 맞게 배정해둔 ghost-grid 를 만든 뒤, 해당되는 cell 이 나중에 입력되도록 하는 방식.*/
-
+        grid-template-columns: repeat(5, 100px);
         grid-gap: 5px;
+
+        /*justify-content: end;*/
+
+        /*align-content: end;*/
+        /*모든 박스가 포함되어 있는 grid container 전체를 이동시킨다. = flex 와의 차이점 */
+
+        place-content: center end;
+        /*justify + align 동시에 적용이 가능하다.*/
+        /* arg 값 : align-content / justify-content */
+        height: 100vh;
       }
       .box:nth-child(odd) {
         background-color: royalblue;
@@ -30,11 +31,6 @@
   </head>
   <body>
     <div class="father">
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
       <div class="box"></div>
       <div class="box"></div>
       <div class="box"></div>
