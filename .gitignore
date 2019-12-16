@@ -1,4 +1,8 @@
 .cache
 dist
+
 grid.html
 Flexbox.html
+
+node_modules
+package-lock.json
