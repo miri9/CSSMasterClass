@@ -27,11 +27,11 @@
       }
 
       .box:first-child {
-        /*grid-row: 1 / 5;*/
+        /*grid-area: 2 / 1 / 4 / -1;*/
+        /*row-start , column-start, row-end, column-end 순서로 입력 */
 
-        /*아니면 시작라인-끝라인 없이 단순하게, n칸 크기의 row/column 을 가지라고 할수도 있다.*/
-        grid-row: span 5;
-        grid-column: span 3;
+        grid-area: span 4 / span 4;
+        /*두개의 값을 넣을 경우 row와 column으로 인식. */
       }
     </style>
   </head>
