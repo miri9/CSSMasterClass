@@ -1,25 +1,28 @@
-/*color-mod-functional*/
-h1 {
-  color: color-mod(#e84118 alpha(50%));
-}
-h2 {
-  color: color-mod(#e84118 contrast(50%));
-}
-h3 {
-  color: #f6e58d;
-}
-h3:hover {
-  color: color-mod(#f6e58d blackness(30%));
-}
-/*gray()*/
-h4 {
-  color: blue;
-}
-h4:hover {
-  color: gray(0); /*숫자가 작을수록 완전히 black. ~ white*/
+/*nesting : selector 의 반복을 줄일 수 있다.*/
+
+main {
+  background-color: blue;
+
+  & section {
+    background-color: red;
+    width: 500px;
+
+    & li {
+      background-color: yellow;
+      width: 400px;
+
+      & a {
+        color: black;
+
+        &:hover {
+          font-size: 30px;
+        }
+      }
+    }
+  }
 }
 
-/*system ui - 사용자의 기본 system font 를 사용하게 한다. 기존에 특정 폰트 사용할 시 그 폰트를 일일이 입력해주어야 함을 간편화한 것.*/
-h5 {
-  font-family: system-ui;
+a {
+  color: red;
+  /* 다른 셀렉터들이 더 우선순위를 가지므로 밖에서 수정 x. = selection 이 자세할수록.*/
 }
